@@ -19,13 +19,13 @@ const DogShow: React.FC<{ data: IsShowResult}> = ({ data }) => {
   )
 }
 
+const WrappedDogShow = withLoader(DogShow, 'https://dog.ceo/api/breeds/image/random')
+
 function App() {
   const [message, setMessage] = useState('Hello word!!!')
   const [show,setShow] = useState(true)
 
   const usePositions = UseMousePosition()
-
-  const WrappedDogShow = withLoader(DogShow, 'https://dog.ceo/api/breeds/image/random')
 
   const messageChange = () => {
     setMessage(message + "!")
