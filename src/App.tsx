@@ -1,4 +1,4 @@
-import React, {useEffect, useState, Suspense} from 'react';
+import React, {useState, Suspense} from 'react';
 import './App.css';
 import Hello from "./components/Hello";
 import LikeButton from "./components/LikeButton/LikeButton";
@@ -17,7 +17,7 @@ const DogShow: React.FC<{ data: IsShowResult}> = ({ data }) => {
   return (
       <>
         <h2>Dog Show: {data.status}</h2>
-        <img src={data.message}/>
+        <img src={data.message} alt="image"/>
       </>
   )
 }
