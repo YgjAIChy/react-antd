@@ -1,9 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import './App.css';
 import Hello from "./components/Hello";
 import LikeButton from "./components/LikeButton/LikeButton";
 import UseMousePosition from "./hooks/useMousePosition";
 import withLoader from "./components/withLoader/withLoader";
+
+import DogShowModal from "./components/dogShow/DogShow";
+import Todo from "./components/dogShow/Todo";
 
 interface IsShowResult {
   message: string;
@@ -35,6 +38,14 @@ function App() {
   }
     return (
     <div className="App">
+
+      <Suspense fallback={<h2>loading....</h2>}>
+        <DogShowModal />
+      </Suspense>
+
+      <Suspense fallback={<h2>loading....</h2>}>
+        <Todo />
+      </Suspense>
       <header className="App-header">
         <button onClick={showChange}>showChange</button>
         <p onClick={messageChange}>
