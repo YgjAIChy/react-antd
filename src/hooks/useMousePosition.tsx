@@ -7,7 +7,7 @@ const UseMousePosition = () => {
     useEffect(()=>{
         console.log('add mousemove',positions.x)
         const updateMouse = (e: MouseEvent) => {
-            console.log('set mousemove')
+            // console.log('set mousemove')
             setPositions({x: e.clientX,y: e.clientY})
         }
         document.addEventListener('mousemove',updateMouse)
